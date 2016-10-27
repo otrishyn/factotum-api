@@ -20,7 +20,7 @@ class CreateTypesTable extends Migration
             $table->index(['name']);
             $table->integer('category_id')->unsigned();
             $table->foreign('category_id')
-                ->reference('id')
+                ->references('id')
                 ->on('categories');
         });
     }

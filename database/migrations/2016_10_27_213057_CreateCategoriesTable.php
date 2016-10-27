@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class create_categories_table extends Migration
+class CreateCategoriesTable extends Migration
 {
     /**
      * Run the migrations.
