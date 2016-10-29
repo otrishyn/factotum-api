@@ -1,6 +1,6 @@
 <?php
 
-namespace app\lib\Factotum\Transformers;
+namespace Factotum\Transformers;
 
 use Illuminate\Database\Eloquent\Model;
 use League\Fractal;
