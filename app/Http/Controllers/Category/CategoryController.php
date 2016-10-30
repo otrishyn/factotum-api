@@ -2,21 +2,21 @@
 
 namespace App\Http\Controllers\Category;
 
+use App\Http\Controllers\Controller;
 use App\Models\Categories\Category;
 use Illuminate\Http\Request;
-use App\Http\Requests;
-use App\Http\Controllers\Controller;
 
 class CategoryController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
+     * @param \Request $request
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(\Request $request)
     {
-        return [];
+        return $this->response->output(Category::paginate($request->get('page', 1)));
     }
 
     /**
@@ -67,6 +67,8 @@ class CategoryController extends Controller
      */
     public function destroy($id)
     {
-        //
+        Category::findOrFail($id)->delete();
+        
+        return $this->statusResponse(204);
     }
 }
