@@ -11,12 +11,12 @@ class CategoryController extends Controller
     /**
      * Display a listing of the resource.
      *
-     * @param \Request $request
+     * @param Request $request
      * @return \Illuminate\Http\Response
      */
-    public function index(\Request $request)
+    public function index(Request $request)
     {
-        return $this->response->output(Category::paginate($request->get('page', 1)));
+        return $this->response->output(Category::paginate((int) $request->get('page', 1)));
     }
 
     /**
