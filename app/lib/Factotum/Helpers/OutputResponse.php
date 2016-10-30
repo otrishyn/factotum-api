@@ -4,7 +4,6 @@ namespace Factotum\Helpers;
 
 
 use Factotum\Transformers\DummyTransformer;
-use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Pagination\LengthAwarePaginator;
 use Illuminate\Support\Collection;
 use League\Fractal\Pagination\IlluminatePaginatorAdapter;
@@ -13,6 +12,9 @@ class OutputResponse
 {
     public function output($data, $transformer = null, $includes = [], $meta = [])
     {
+        /**
+         * @var \Spatie\Fractal\Fractal $fractal
+         */
         $fractal = fractal()
             ->parseIncludes($includes)
             ->addMeta($meta);
