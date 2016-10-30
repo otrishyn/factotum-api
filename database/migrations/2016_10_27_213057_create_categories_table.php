@@ -20,6 +20,10 @@ class CreateCategoriesTable extends Migration
             $table->integer('queue');
             $table->index(['name', 'queue']);
         });
+
+        \App\Models\Categories\Category::create(['name'=>'Коммунальные', 'queue'=>1]);
+        \App\Models\Categories\Category::create(['name'=>'Покупки', 'queue'=>2]);
+        \App\Models\Categories\Category::create(['name'=>'Еда', 'queue'=>3]);
     }
 
     /**
