@@ -2,11 +2,12 @@
 
 namespace App\Http\Controllers\Category;
 
-use App\Http\Controllers\Controller;
+use App\Http\Controllers\ApiController;
 use App\Models\Categories\Category;
+use Factotum\Transformers\Category\CategoryTransformer;
 use Illuminate\Http\Request;
 
-class CategoryController extends Controller
+class CategoryController extends ApiController
 {
     /**
      * Display a listing of the resource.
@@ -16,7 +17,7 @@ class CategoryController extends Controller
      */
     public function index(Request $request)
     {
-        return $this->response->output(Category::paginate((int) $request->get('page', 1)));
+        return $this->respondWithCollection(Category::paginate(10), new CategoryTransformer(), 'category');
     }
 
     /**

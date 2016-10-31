@@ -16,19 +16,4 @@ use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 class Controller extends BaseController
 {
     use AuthorizesRequests, DispatchesJobs, ValidatesRequests;
-
-    /**
-     * @var \Factotum\Helpers\OutputResponse
-     */
-    protected $response;
-
-    /**
-     * Controller constructor.
-     *
-     * @param \Factotum\Helpers\OutputResponse $outputResponse
-     */
-    public function __construct(OutputResponse $outputResponse)
-    {
-        $this->response = $outputResponse;
-    }
 }
