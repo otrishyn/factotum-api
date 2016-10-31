@@ -7,6 +7,8 @@ use Illuminate\Database\Eloquent\Model;
 /**
  * Class Category
  *
+ * @property mixed name
+ * @property mixed id
  * @package App\Models\Categories
  */
 class Category extends Model
@@ -18,7 +20,7 @@ class Category extends Model
      */
     protected $fillable = [
         'name',
-        'queue'
+        'queue',
     ];
 
     /**
