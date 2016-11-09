@@ -36,6 +36,11 @@ class ApiController extends Controller
      *
      */
     const CODE_FORBIDDEN = 'GEN-GTFO';
+    
+    /**
+     * @var int
+     */
+    protected $defaultLimit = 10;
 
     /**
      * @param Model $item
@@ -135,6 +140,15 @@ class ApiController extends Controller
         $fractal->transformWith($transformer);
 
         return $fractal;
+    }
+    
+    /**
+     * @param string|null $message
+     * @return \Illuminate\Http\JsonResponse
+     */
+    protected function respondWithOk($message = null)
+    {
+        return $this->respondWithBody(200, $message);
     }
     
     /**
