@@ -2,86 +2,100 @@
 
 namespace App\Http\Controllers\Category;
 
+use App\Http\Controllers\ApiController;
+use App\Models\Categories\Type;
+use Factotum\Transformers\Category\TypeTransformer;
 use Illuminate\Http\Request;
 
-use App\Http\Requests;
-use App\Http\Controllers\Controller;
-
-class TypeController extends Controller
+/**
+ * Class TypeController
+ *
+ * @package App\Http\Controllers\Category
+ */
+class TypeController extends ApiController
 {
     /**
      * Display a listing of the resource.
      *
-     * @return \Illuminate\Http\Response
+     * @param mixed $id
+     * @param \Illuminate\Http\Request $request
+     * @return array
      */
-    public function index()
+    public function index($id, Request $request)
     {
-        //
+        return $this->respondWithCollection(
+            Type::where('category_id',$id)->paginate($request->input('limit', $this->defaultLimit)),
+            new TypeTransformer(),
+            'type'
+        );
     }
-
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
-    }
-
+    
+   
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
+     * @param  \Illuminate\Http\Request $request
+     * @param mixed $id
+     * @return array
      */
-    public function store(Request $request)
+    public function store(Request $request, $id)
     {
-        //
+        return $this->respondWithItem(
+            Type::create(
+                [
+                    'name' => $request->input('name'),
+                    'category_id' => (int) $id
+                ]
+            ),
+            new TypeTransformer(),
+            'type'
+        );
     }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-        //
-    }
-
+    
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param  \Illuminate\Http\Request $request
+     * @param  mixed $id
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id)
     {
-        //
+        $type = Type::findOrFail($id);
+        $type->update($request->all());
+        
+        return $this->respondWithItem(
+            $type,
+            new TypeTransformer(),
+            'type'
+        );
     }
-
+    
+    /**
+     * Display the specified resource.
+     *
+     * @param  mixed $id
+     * @return array
+     */
+    public function show($id)
+    {
+        return $this->respondWithItem(
+            Type::findOrFail($id),
+            new TypeTransformer(),
+            'type'
+        );
+    }
+    
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
+     * @param  mixed $id
+     * @return \Illuminate\Http\JsonResponse
      */
     public function destroy($id)
     {
-        //
+        Type::findOrFail($id)->delete();
+    
+        return $this->respondWithOk();
     }
 }
