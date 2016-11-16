@@ -20,7 +20,8 @@ class CategoryController extends ApiController
         return $this->respondWithCollection(
             Category::paginate($request->input('limit', $this->defaultLimit)),
             new CategoryTransformer(),
-            'category'
+            'category',
+            explode(',', $request->input('include', ''))
         );
     }
     
