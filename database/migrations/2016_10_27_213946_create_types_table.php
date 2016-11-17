@@ -4,6 +4,9 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
+/**
+ * Class CreateTypesTable
+ */
 class CreateTypesTable extends Migration
 {
     /**
@@ -14,11 +17,12 @@ class CreateTypesTable extends Migration
     public function up()
     {
         Schema::create('types', function (Blueprint $table) {
-            $table->increments('id');
+            $table->uuid('id');
+            $table->primary('id');
             $table->timestamps();
             $table->string('name');
             $table->index(['name']);
-            $table->integer('category_id')->unsigned();
+            $table->uuid('category_id');
             $table->foreign('category_id')
                 ->references('id')
                 ->on('categories');
