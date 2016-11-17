@@ -2,6 +2,7 @@
 
 namespace App\Models\Categories;
 
+use App\Traits\Uuids;
 use Illuminate\Database\Eloquent\Model;
 
 /**
@@ -13,6 +14,13 @@ use Illuminate\Database\Eloquent\Model;
  */
 class Category extends Model
 {
+    use Uuids;
+    /**
+     * Indicates if the IDs are auto-incrementing.
+     *
+     * @var bool
+     */
+    public $incrementing = false;
     /**
      * The attributes that are mass assignable.
      *
