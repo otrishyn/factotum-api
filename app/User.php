@@ -13,7 +13,7 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
  */
 class User extends Authenticatable
 {
-    use Notifiable, Uuids;
+    use Notifiable, Uuids, HasApiTokens;
     
     /**
      * Indicates if the IDs are auto-incrementing.
