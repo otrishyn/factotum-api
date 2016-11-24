@@ -14,8 +14,7 @@ return [
     */
 
     'defaults' => [
-        'guard' => 'web',
-        'passwords' => 'users',
+        'guard' => 'api',
     ],
 
     /*
@@ -36,11 +35,6 @@ return [
     */
 
     'guards' => [
-        'web' => [
-            'driver' => 'session',
-            'provider' => 'users',
-        ],
-
         'api' => [
             'driver' => 'passport',
             'provider' => 'users',
@@ -91,12 +85,6 @@ return [
     |
     */
 
-    'passwords' => [
-        'users' => [
-            'provider' => 'users',
-            'table' => 'password_resets',
-            'expire' => 60,
-        ],
-    ],
+    'passwords' => [],
 
 ];
