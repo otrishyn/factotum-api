@@ -5,6 +5,7 @@ namespace App;
 use App\Traits\Uuids;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
+use Laravel\Passport\HasApiTokens;
 
 /**
  * Class User
@@ -13,7 +14,7 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
  */
 class User extends Authenticatable
 {
-    use Notifiable, Uuids;
+    use HasApiTokens, Notifiable, Uuids;
     
     /**
      * Indicates if the IDs are auto-incrementing.
