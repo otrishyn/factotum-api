@@ -10,6 +10,9 @@ use Laravel\Passport\HasApiTokens;
 /**
  * Class User
  *
+ * @property mixed id
+ * @property mixed name
+ * @property mixed email
  * @package App
  */
 class User extends Authenticatable
