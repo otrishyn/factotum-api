@@ -4,9 +4,188 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "fae8bd6855feba1a9048fd7d438c0944",
-    "content-hash": "d56129b15a631d83fed6d5c0a4c618df",
+    "content-hash": "8e40420e14a8971166cb1326371ff243",
     "packages": [
+        {
+            "name": "behat/behat",
+            "version": "v3.2.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Behat/Behat.git",
+                "reference": "30aa3836825416f28581ee55fcfe6a5b0cdeeb85"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Behat/Behat/zipball/30aa3836825416f28581ee55fcfe6a5b0cdeeb85",
+                "reference": "30aa3836825416f28581ee55fcfe6a5b0cdeeb85",
+                "shasum": ""
+            },
+            "require": {
+                "behat/gherkin": "^4.4.4",
+                "behat/transliterator": "~1.0",
+                "ext-mbstring": "*",
+                "php": ">=5.3.3",
+                "symfony/class-loader": "~2.1||~3.0",
+                "symfony/config": "~2.3||~3.0",
+                "symfony/console": "~2.5||~3.0",
+                "symfony/dependency-injection": "~2.1||~3.0",
+                "symfony/event-dispatcher": "~2.1||~3.0",
+                "symfony/translation": "~2.3||~3.0",
+                "symfony/yaml": "~2.1||~3.0"
+            },
+            "require-dev": {
+                "herrera-io/box": "~1.6.1",
+                "phpunit/phpunit": "~4.5",
+                "symfony/process": "~2.5|~3.0"
+            },
+            "suggest": {
+                "behat/mink-extension": "for integration with Mink testing framework",
+                "behat/symfony2-extension": "for integration with Symfony2 web framework",
+                "behat/yii-extension": "for integration with Yii web framework"
+            },
+            "bin": [
+                "bin/behat"
+            ],
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "3.2.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-0": {
+                    "Behat\\Behat": "src/",
+                    "Behat\\Testwork": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Konstantin Kudryashov",
+                    "email": "ever.zet@gmail.com",
+                    "homepage": "http://everzet.com"
+                }
+            ],
+            "description": "Scenario-oriented BDD framework for PHP 5.3",
+            "homepage": "http://behat.org/",
+            "keywords": [
+                "Agile",
+                "BDD",
+                "ScenarioBDD",
+                "Scrum",
+                "StoryBDD",
+                "User story",
+                "business",
+                "development",
+                "documentation",
+                "examples",
+                "symfony",
+                "testing"
+            ],
+            "time": "2016-11-05T17:13:53+00:00"
+        },
+        {
+            "name": "behat/gherkin",
+            "version": "v4.4.5",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Behat/Gherkin.git",
+                "reference": "5c14cff4f955b17d20d088dec1bde61c0539ec74"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Behat/Gherkin/zipball/5c14cff4f955b17d20d088dec1bde61c0539ec74",
+                "reference": "5c14cff4f955b17d20d088dec1bde61c0539ec74",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.1"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "~4.5|~5",
+                "symfony/phpunit-bridge": "~2.7|~3",
+                "symfony/yaml": "~2.3|~3"
+            },
+            "suggest": {
+                "symfony/yaml": "If you want to parse features, represented in YAML files"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "4.4-dev"
+                }
+            },
+            "autoload": {
+                "psr-0": {
+                    "Behat\\Gherkin": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Konstantin Kudryashov",
+                    "email": "ever.zet@gmail.com",
+                    "homepage": "http://everzet.com"
+                }
+            ],
+            "description": "Gherkin DSL parser for PHP 5.3",
+            "homepage": "http://behat.org/",
+            "keywords": [
+                "BDD",
+                "Behat",
+                "Cucumber",
+                "DSL",
+                "gherkin",
+                "parser"
+            ],
+            "time": "2016-10-30T11:50:56+00:00"
+        },
+        {
+            "name": "behat/transliterator",
+            "version": "v1.1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Behat/Transliterator.git",
+                "reference": "868e05be3a9f25ba6424c2dd4849567f50715003"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Behat/Transliterator/zipball/868e05be3a9f25ba6424c2dd4849567f50715003",
+                "reference": "868e05be3a9f25ba6424c2dd4849567f50715003",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.3"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.1-dev"
+                }
+            },
+            "autoload": {
+                "psr-0": {
+                    "Behat\\Transliterator": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "Artistic-1.0"
+            ],
+            "description": "String transliterator",
+            "keywords": [
+                "i18n",
+                "slug",
+                "transliterator"
+            ],
+            "time": "2015-09-28T16:26:35+00:00"
+        },
         {
             "name": "classpreloader/classpreloader",
             "version": "3.0.0",
@@ -59,7 +238,7 @@
                 "class",
                 "preload"
             ],
-            "time": "2015-11-09 22:51:51"
+            "time": "2015-11-09T22:51:51+00:00"
         },
         {
             "name": "dnoegel/php-xdg-base-dir",
@@ -92,7 +271,7 @@
                 "MIT"
             ],
             "description": "implementation of xdg base directory specification for php",
-            "time": "2014-10-24 07:27:01"
+            "time": "2014-10-24T07:27:01+00:00"
         },
         {
             "name": "doctrine/inflector",
@@ -159,7 +338,7 @@
                 "singularize",
                 "string"
             ],
-            "time": "2015-11-06 14:35:42"
+            "time": "2015-11-06T14:35:42+00:00"
         },
         {
             "name": "firebase/php-jwt",
@@ -202,7 +381,7 @@
             ],
             "description": "A simple library to encode and decode JSON Web Tokens (JWT) in PHP. Should conform to the current spec.",
             "homepage": "https://github.com/firebase/php-jwt",
-            "time": "2016-07-18 04:51:16"
+            "time": "2016-07-18T04:51:16+00:00"
         },
         {
             "name": "guzzlehttp/guzzle",
@@ -264,7 +443,7 @@
                 "rest",
                 "web service"
             ],
-            "time": "2016-10-08 15:01:37"
+            "time": "2016-10-08T15:01:37+00:00"
         },
         {
             "name": "guzzlehttp/promises",
@@ -315,7 +494,7 @@
             "keywords": [
                 "promise"
             ],
-            "time": "2016-11-18 17:47:58"
+            "time": "2016-11-18T17:47:58+00:00"
         },
         {
             "name": "guzzlehttp/psr7",
@@ -373,7 +552,7 @@
                 "stream",
                 "uri"
             ],
-            "time": "2016-06-24 23:00:38"
+            "time": "2016-06-24T23:00:38+00:00"
         },
         {
             "name": "jakub-onderka/php-console-color",
@@ -416,7 +595,7 @@
                     "homepage": "http://www.acci.cz"
                 }
             ],
-            "time": "2014-04-08 15:00:19"
+            "time": "2014-04-08T15:00:19+00:00"
         },
         {
             "name": "jakub-onderka/php-console-highlighter",
@@ -460,7 +639,7 @@
                     "homepage": "http://www.acci.cz/"
                 }
             ],
-            "time": "2015-04-20 18:58:01"
+            "time": "2015-04-20T18:58:01+00:00"
         },
         {
             "name": "jeremeamia/SuperClosure",
@@ -518,7 +697,7 @@
                 "serialize",
                 "tokenizer"
             ],
-            "time": "2015-12-05 17:17:57"
+            "time": "2015-12-05T17:17:57+00:00"
         },
         {
             "name": "laravel/framework",
@@ -646,7 +825,7 @@
                 "framework",
                 "laravel"
             ],
-            "time": "2016-11-01 18:52:00"
+            "time": "2016-11-01T18:52:00+00:00"
         },
         {
             "name": "laravel/passport",
@@ -710,7 +889,7 @@
                 "oauth",
                 "passport"
             ],
-            "time": "2016-11-18 17:58:03"
+            "time": "2016-11-18T17:58:03+00:00"
         },
         {
             "name": "lcobucci/jwt",
@@ -768,7 +947,7 @@
                 "JWS",
                 "jwt"
             ],
-            "time": "2016-10-31 20:09:32"
+            "time": "2016-10-31T20:09:32+00:00"
         },
         {
             "name": "league/event",
@@ -818,7 +997,7 @@
                 "event",
                 "listener"
             ],
-            "time": "2015-05-21 12:24:47"
+            "time": "2015-05-21T12:24:47+00:00"
         },
         {
             "name": "league/flysystem",
@@ -901,7 +1080,7 @@
                 "sftp",
                 "storage"
             ],
-            "time": "2016-10-19 20:38:46"
+            "time": "2016-10-19T20:38:46+00:00"
         },
         {
             "name": "league/fractal",
@@ -964,7 +1143,7 @@
                 "league",
                 "rest"
             ],
-            "time": "2016-07-21 09:56:14"
+            "time": "2016-07-21T09:56:14+00:00"
         },
         {
             "name": "league/oauth2-server",
@@ -1040,7 +1219,7 @@
                 "secure",
                 "server"
             ],
-            "time": "2016-10-12 14:08:15"
+            "time": "2016-10-12T14:08:15+00:00"
         },
         {
             "name": "monolog/monolog",
@@ -1118,7 +1297,7 @@
                 "logging",
                 "psr-3"
             ],
-            "time": "2016-07-29 03:23:52"
+            "time": "2016-07-29T03:23:52+00:00"
         },
         {
             "name": "mtdowling/cron-expression",
@@ -1162,7 +1341,7 @@
                 "cron",
                 "schedule"
             ],
-            "time": "2016-01-26 21:23:30"
+            "time": "2016-01-26T21:23:30+00:00"
         },
         {
             "name": "nesbot/carbon",
@@ -1209,7 +1388,7 @@
                 "datetime",
                 "time"
             ],
-            "time": "2015-11-04 20:07:17"
+            "time": "2015-11-04T20:07:17+00:00"
         },
         {
             "name": "nikic/php-parser",
@@ -1260,7 +1439,7 @@
                 "parser",
                 "php"
             ],
-            "time": "2016-09-16 12:04:44"
+            "time": "2016-09-16T12:04:44+00:00"
         },
         {
             "name": "paragonie/random_compat",
@@ -1308,7 +1487,7 @@
                 "pseudorandom",
                 "random"
             ],
-            "time": "2016-11-07 23:38:38"
+            "time": "2016-11-07T23:38:38+00:00"
         },
         {
             "name": "phpseclib/phpseclib",
@@ -1400,7 +1579,7 @@
                 "x.509",
                 "x509"
             ],
-            "time": "2016-10-04 00:57:04"
+            "time": "2016-10-04T00:57:04+00:00"
         },
         {
             "name": "psr/http-message",
@@ -1450,7 +1629,7 @@
                 "request",
                 "response"
             ],
-            "time": "2016-08-06 14:39:51"
+            "time": "2016-08-06T14:39:51+00:00"
         },
         {
             "name": "psr/log",
@@ -1497,7 +1676,7 @@
                 "psr",
                 "psr-3"
             ],
-            "time": "2016-10-10 12:19:37"
+            "time": "2016-10-10T12:19:37+00:00"
         },
         {
             "name": "psy/psysh",
@@ -1569,7 +1748,7 @@
                 "interactive",
                 "shell"
             ],
-            "time": "2016-03-09 05:03:14"
+            "time": "2016-03-09T05:03:14+00:00"
         },
         {
             "name": "ramsey/uuid",
@@ -1649,7 +1828,7 @@
                 "identifier",
                 "uuid"
             ],
-            "time": "2016-10-02 15:51:17"
+            "time": "2016-10-02T15:51:17+00:00"
         },
         {
             "name": "spatie/laravel-fractal",
@@ -1707,7 +1886,7 @@
                 "spatie",
                 "transform"
             ],
-            "time": "2016-09-27 09:18:36"
+            "time": "2016-09-27T09:18:36+00:00"
         },
         {
             "name": "swiftmailer/swiftmailer",
@@ -1760,7 +1939,116 @@
                 "mail",
                 "mailer"
             ],
-            "time": "2016-07-08 11:51:25"
+            "time": "2016-07-08T11:51:25+00:00"
+        },
+        {
+            "name": "symfony/class-loader",
+            "version": "v3.1.6",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/symfony/class-loader.git",
+                "reference": "bcb072aba46ddf3b1a496438c63be6be647739aa"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/symfony/class-loader/zipball/bcb072aba46ddf3b1a496438c63be6be647739aa",
+                "reference": "bcb072aba46ddf3b1a496438c63be6be647739aa",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.5.9"
+            },
+            "require-dev": {
+                "symfony/finder": "~2.8|~3.0",
+                "symfony/polyfill-apcu": "~1.1"
+            },
+            "suggest": {
+                "symfony/polyfill-apcu": "For using ApcClassLoader on HHVM"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "3.1-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Symfony\\Component\\ClassLoader\\": ""
+                },
+                "exclude-from-classmap": [
+                    "/Tests/"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Fabien Potencier",
+                    "email": "fabien@symfony.com"
+                },
+                {
+                    "name": "Symfony Community",
+                    "homepage": "https://symfony.com/contributors"
+                }
+            ],
+            "description": "Symfony ClassLoader Component",
+            "homepage": "https://symfony.com",
+            "time": "2016-09-06T23:30:54+00:00"
+        },
+        {
+            "name": "symfony/config",
+            "version": "v3.1.6",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/symfony/config.git",
+                "reference": "949e7e846743a7f9e46dc50eb639d5fde1f53341"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/symfony/config/zipball/949e7e846743a7f9e46dc50eb639d5fde1f53341",
+                "reference": "949e7e846743a7f9e46dc50eb639d5fde1f53341",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.5.9",
+                "symfony/filesystem": "~2.8|~3.0"
+            },
+            "suggest": {
+                "symfony/yaml": "To use the yaml reference dumper"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "3.1-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Symfony\\Component\\Config\\": ""
+                },
+                "exclude-from-classmap": [
+                    "/Tests/"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Fabien Potencier",
+                    "email": "fabien@symfony.com"
+                },
+                {
+                    "name": "Symfony Community",
+                    "homepage": "https://symfony.com/contributors"
+                }
+            ],
+            "description": "Symfony Config Component",
+            "homepage": "https://symfony.com",
+            "time": "2016-09-25T08:27:07+00:00"
         },
         {
             "name": "symfony/console",
@@ -1821,7 +2109,7 @@
             ],
             "description": "Symfony Console Component",
             "homepage": "https://symfony.com",
-            "time": "2016-10-06 01:44:51"
+            "time": "2016-10-06T01:44:51+00:00"
         },
         {
             "name": "symfony/debug",
@@ -1878,7 +2166,67 @@
             ],
             "description": "Symfony Debug Component",
             "homepage": "https://symfony.com",
-            "time": "2016-09-06 11:02:40"
+            "time": "2016-09-06T11:02:40+00:00"
+        },
+        {
+            "name": "symfony/dependency-injection",
+            "version": "v3.1.6",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/symfony/dependency-injection.git",
+                "reference": "c578891216090069cd6d2e573402e13e39b3ad5c"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/symfony/dependency-injection/zipball/c578891216090069cd6d2e573402e13e39b3ad5c",
+                "reference": "c578891216090069cd6d2e573402e13e39b3ad5c",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.5.9"
+            },
+            "require-dev": {
+                "symfony/config": "~2.8|~3.0",
+                "symfony/expression-language": "~2.8|~3.0",
+                "symfony/yaml": "~2.8.7|~3.0.7|~3.1.1|~3.2"
+            },
+            "suggest": {
+                "symfony/config": "",
+                "symfony/expression-language": "For using expressions in service container configuration",
+                "symfony/proxy-manager-bridge": "Generate service proxies to lazy load them",
+                "symfony/yaml": ""
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "3.1-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Symfony\\Component\\DependencyInjection\\": ""
+                },
+                "exclude-from-classmap": [
+                    "/Tests/"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Fabien Potencier",
+                    "email": "fabien@symfony.com"
+                },
+                {
+                    "name": "Symfony Community",
+                    "homepage": "https://symfony.com/contributors"
+                }
+            ],
+            "description": "Symfony DependencyInjection Component",
+            "homepage": "https://symfony.com",
+            "time": "2016-10-24T15:52:44+00:00"
         },
         {
             "name": "symfony/event-dispatcher",
@@ -1938,7 +2286,56 @@
             ],
             "description": "Symfony EventDispatcher Component",
             "homepage": "https://symfony.com",
-            "time": "2016-10-13 06:28:43"
+            "time": "2016-10-13T06:28:43+00:00"
+        },
+        {
+            "name": "symfony/filesystem",
+            "version": "v3.1.6",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/symfony/filesystem.git",
+                "reference": "0565b61bf098cb4dc09f4f103f033138ae4f42c6"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/symfony/filesystem/zipball/0565b61bf098cb4dc09f4f103f033138ae4f42c6",
+                "reference": "0565b61bf098cb4dc09f4f103f033138ae4f42c6",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.5.9"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "3.1-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Symfony\\Component\\Filesystem\\": ""
+                },
+                "exclude-from-classmap": [
+                    "/Tests/"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Fabien Potencier",
+                    "email": "fabien@symfony.com"
+                },
+                {
+                    "name": "Symfony Community",
+                    "homepage": "https://symfony.com/contributors"
+                }
+            ],
+            "description": "Symfony Filesystem Component",
+            "homepage": "https://symfony.com",
+            "time": "2016-10-18T04:30:12+00:00"
         },
         {
             "name": "symfony/finder",
@@ -1987,7 +2384,7 @@
             ],
             "description": "Symfony Finder Component",
             "homepage": "https://symfony.com",
-            "time": "2016-09-28 00:11:12"
+            "time": "2016-09-28T00:11:12+00:00"
         },
         {
             "name": "symfony/http-foundation",
@@ -2040,7 +2437,7 @@
             ],
             "description": "Symfony HttpFoundation Component",
             "homepage": "https://symfony.com",
-            "time": "2016-10-24 15:52:44"
+            "time": "2016-10-24T15:52:44+00:00"
         },
         {
             "name": "symfony/http-kernel",
@@ -2122,7 +2519,7 @@
             ],
             "description": "Symfony HttpKernel Component",
             "homepage": "https://symfony.com",
-            "time": "2016-10-27 02:38:31"
+            "time": "2016-10-27T02:38:31+00:00"
         },
         {
             "name": "symfony/polyfill-mbstring",
@@ -2181,7 +2578,7 @@
                 "portable",
                 "shim"
             ],
-            "time": "2016-05-18 14:26:46"
+            "time": "2016-05-18T14:26:46+00:00"
         },
         {
             "name": "symfony/polyfill-php56",
@@ -2237,7 +2634,7 @@
                 "portable",
                 "shim"
             ],
-            "time": "2016-05-18 14:26:46"
+            "time": "2016-05-18T14:26:46+00:00"
         },
         {
             "name": "symfony/polyfill-util",
@@ -2289,7 +2686,7 @@
                 "polyfill",
                 "shim"
             ],
-            "time": "2016-05-18 14:26:46"
+            "time": "2016-05-18T14:26:46+00:00"
         },
         {
             "name": "symfony/process",
@@ -2338,7 +2735,7 @@
             ],
             "description": "Symfony Process Component",
             "homepage": "https://symfony.com",
-            "time": "2016-09-29 14:13:09"
+            "time": "2016-09-29T14:13:09+00:00"
         },
         {
             "name": "symfony/psr-http-message-bridge",
@@ -2398,7 +2795,7 @@
                 "http-message",
                 "psr-7"
             ],
-            "time": "2016-09-14 18:37:20"
+            "time": "2016-09-14T18:37:20+00:00"
         },
         {
             "name": "symfony/routing",
@@ -2473,7 +2870,7 @@
                 "uri",
                 "url"
             ],
-            "time": "2016-08-16 14:58:24"
+            "time": "2016-08-16T14:58:24+00:00"
         },
         {
             "name": "symfony/translation",
@@ -2537,7 +2934,7 @@
             ],
             "description": "Symfony Translation Component",
             "homepage": "https://symfony.com",
-            "time": "2016-10-18 04:30:12"
+            "time": "2016-10-18T04:30:12+00:00"
         },
         {
             "name": "symfony/var-dumper",
@@ -2600,7 +2997,56 @@
                 "debug",
                 "dump"
             ],
-            "time": "2016-10-18 15:46:07"
+            "time": "2016-10-18T15:46:07+00:00"
+        },
+        {
+            "name": "symfony/yaml",
+            "version": "v3.1.6",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/symfony/yaml.git",
+                "reference": "7ff51b06c6c3d5cc6686df69004a42c69df09e27"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/symfony/yaml/zipball/7ff51b06c6c3d5cc6686df69004a42c69df09e27",
+                "reference": "7ff51b06c6c3d5cc6686df69004a42c69df09e27",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.5.9"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "3.1-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Symfony\\Component\\Yaml\\": ""
+                },
+                "exclude-from-classmap": [
+                    "/Tests/"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Fabien Potencier",
+                    "email": "fabien@symfony.com"
+                },
+                {
+                    "name": "Symfony Community",
+                    "homepage": "https://symfony.com/contributors"
+                }
+            ],
+            "description": "Symfony Yaml Component",
+            "homepage": "https://symfony.com",
+            "time": "2016-10-24T18:41:13+00:00"
         },
         {
             "name": "vlucas/phpdotenv",
@@ -2650,7 +3096,7 @@
                 "env",
                 "environment"
             ],
-            "time": "2016-09-01 10:05:43"
+            "time": "2016-09-01T10:05:43+00:00"
         },
         {
             "name": "webpatser/laravel-uuid",
@@ -2697,7 +3143,7 @@
             "keywords": [
                 "UUID RFC4122"
             ],
-            "time": "2016-05-09 09:22:18"
+            "time": "2016-05-09T09:22:18+00:00"
         },
         {
             "name": "zendframework/zend-diactoros",
@@ -2747,7 +3193,7 @@
                 "psr",
                 "psr-7"
             ],
-            "time": "2016-10-11 13:25:21"
+            "time": "2016-10-11T13:25:21+00:00"
         }
     ],
     "packages-dev": [
@@ -2815,7 +3261,7 @@
                 "phpstorm",
                 "sublime"
             ],
-            "time": "2016-07-04 11:52:48"
+            "time": "2016-07-04T11:52:48+00:00"
         },
         {
             "name": "barryvdh/reflection-docblock",
@@ -2864,187 +3310,7 @@
                     "email": "mike.vanriel@naenius.com"
                 }
             ],
-            "time": "2016-06-13 19:28:20"
-        },
-        {
-            "name": "behat/behat",
-            "version": "v3.2.2",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/Behat/Behat.git",
-                "reference": "30aa3836825416f28581ee55fcfe6a5b0cdeeb85"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/Behat/Behat/zipball/30aa3836825416f28581ee55fcfe6a5b0cdeeb85",
-                "reference": "30aa3836825416f28581ee55fcfe6a5b0cdeeb85",
-                "shasum": ""
-            },
-            "require": {
-                "behat/gherkin": "^4.4.4",
-                "behat/transliterator": "~1.0",
-                "ext-mbstring": "*",
-                "php": ">=5.3.3",
-                "symfony/class-loader": "~2.1||~3.0",
-                "symfony/config": "~2.3||~3.0",
-                "symfony/console": "~2.5||~3.0",
-                "symfony/dependency-injection": "~2.1||~3.0",
-                "symfony/event-dispatcher": "~2.1||~3.0",
-                "symfony/translation": "~2.3||~3.0",
-                "symfony/yaml": "~2.1||~3.0"
-            },
-            "require-dev": {
-                "herrera-io/box": "~1.6.1",
-                "phpunit/phpunit": "~4.5",
-                "symfony/process": "~2.5|~3.0"
-            },
-            "suggest": {
-                "behat/mink-extension": "for integration with Mink testing framework",
-                "behat/symfony2-extension": "for integration with Symfony2 web framework",
-                "behat/yii-extension": "for integration with Yii web framework"
-            },
-            "bin": [
-                "bin/behat"
-            ],
-            "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "3.2.x-dev"
-                }
-            },
-            "autoload": {
-                "psr-0": {
-                    "Behat\\Behat": "src/",
-                    "Behat\\Testwork": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Konstantin Kudryashov",
-                    "email": "ever.zet@gmail.com",
-                    "homepage": "http://everzet.com"
-                }
-            ],
-            "description": "Scenario-oriented BDD framework for PHP 5.3",
-            "homepage": "http://behat.org/",
-            "keywords": [
-                "Agile",
-                "BDD",
-                "ScenarioBDD",
-                "Scrum",
-                "StoryBDD",
-                "User story",
-                "business",
-                "development",
-                "documentation",
-                "examples",
-                "symfony",
-                "testing"
-            ],
-            "time": "2016-11-05 17:13:53"
-        },
-        {
-            "name": "behat/gherkin",
-            "version": "v4.4.5",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/Behat/Gherkin.git",
-                "reference": "5c14cff4f955b17d20d088dec1bde61c0539ec74"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/Behat/Gherkin/zipball/5c14cff4f955b17d20d088dec1bde61c0539ec74",
-                "reference": "5c14cff4f955b17d20d088dec1bde61c0539ec74",
-                "shasum": ""
-            },
-            "require": {
-                "php": ">=5.3.1"
-            },
-            "require-dev": {
-                "phpunit/phpunit": "~4.5|~5",
-                "symfony/phpunit-bridge": "~2.7|~3",
-                "symfony/yaml": "~2.3|~3"
-            },
-            "suggest": {
-                "symfony/yaml": "If you want to parse features, represented in YAML files"
-            },
-            "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "4.4-dev"
-                }
-            },
-            "autoload": {
-                "psr-0": {
-                    "Behat\\Gherkin": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Konstantin Kudryashov",
-                    "email": "ever.zet@gmail.com",
-                    "homepage": "http://everzet.com"
-                }
-            ],
-            "description": "Gherkin DSL parser for PHP 5.3",
-            "homepage": "http://behat.org/",
-            "keywords": [
-                "BDD",
-                "Behat",
-                "Cucumber",
-                "DSL",
-                "gherkin",
-                "parser"
-            ],
-            "time": "2016-10-30 11:50:56"
-        },
-        {
-            "name": "behat/transliterator",
-            "version": "v1.1.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/Behat/Transliterator.git",
-                "reference": "868e05be3a9f25ba6424c2dd4849567f50715003"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/Behat/Transliterator/zipball/868e05be3a9f25ba6424c2dd4849567f50715003",
-                "reference": "868e05be3a9f25ba6424c2dd4849567f50715003",
-                "shasum": ""
-            },
-            "require": {
-                "php": ">=5.3.3"
-            },
-            "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "1.1-dev"
-                }
-            },
-            "autoload": {
-                "psr-0": {
-                    "Behat\\Transliterator": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "Artistic-1.0"
-            ],
-            "description": "String transliterator",
-            "keywords": [
-                "i18n",
-                "slug",
-                "transliterator"
-            ],
-            "time": "2015-09-28 16:26:35"
+            "time": "2016-06-13T19:28:20+00:00"
         },
         {
             "name": "doctrine/instantiator",
@@ -3098,7 +3364,7 @@
                 "constructor",
                 "instantiate"
             ],
-            "time": "2015-06-14 21:17:01"
+            "time": "2015-06-14T21:17:01+00:00"
         },
         {
             "name": "fzaninotto/faker",
@@ -3146,7 +3412,7 @@
                 "faker",
                 "fixtures"
             ],
-            "time": "2016-04-29 12:21:54"
+            "time": "2016-04-29T12:21:54+00:00"
         },
         {
             "name": "hamcrest/hamcrest-php",
@@ -3191,7 +3457,7 @@
             "keywords": [
                 "test"
             ],
-            "time": "2015-05-11 14:41:42"
+            "time": "2015-05-11T14:41:42+00:00"
         },
         {
             "name": "mockery/mockery",
@@ -3256,7 +3522,7 @@
                 "test double",
                 "testing"
             ],
-            "time": "2016-05-22 21:52:33"
+            "time": "2016-05-22T21:52:33+00:00"
         },
         {
             "name": "myclabs/deep-copy",
@@ -3298,7 +3564,7 @@
                 "object",
                 "object graph"
             ],
-            "time": "2016-10-31 17:19:45"
+            "time": "2016-10-31T17:19:45+00:00"
         },
         {
             "name": "phpdocumentor/reflection-common",
@@ -3352,7 +3618,7 @@
                 "reflection",
                 "static analysis"
             ],
-            "time": "2015-12-27 11:43:31"
+            "time": "2015-12-27T11:43:31+00:00"
         },
         {
             "name": "phpdocumentor/reflection-docblock",
@@ -3397,7 +3663,7 @@
                 }
             ],
             "description": "With this component, a library can provide support for annotations via DocBlocks or otherwise retrieve information that is embedded in a DocBlock.",
-            "time": "2016-09-30 07:12:33"
+            "time": "2016-09-30T07:12:33+00:00"
         },
         {
             "name": "phpdocumentor/type-resolver",
@@ -3444,7 +3710,7 @@
                     "email": "me@mikevanriel.com"
                 }
             ],
-            "time": "2016-06-10 07:14:17"
+            "time": "2016-06-10T07:14:17+00:00"
         },
         {
             "name": "phpspec/prophecy",
@@ -3506,7 +3772,7 @@
                 "spy",
                 "stub"
             ],
-            "time": "2016-06-07 08:13:47"
+            "time": "2016-06-07T08:13:47+00:00"
         },
         {
             "name": "phpunit/php-code-coverage",
@@ -3569,7 +3835,7 @@
                 "testing",
                 "xunit"
             ],
-            "time": "2016-11-01 05:06:24"
+            "time": "2016-11-01T05:06:24+00:00"
         },
         {
             "name": "phpunit/php-file-iterator",
@@ -3616,7 +3882,7 @@
                 "filesystem",
                 "iterator"
             ],
-            "time": "2015-06-21 13:08:43"
+            "time": "2015-06-21T13:08:43+00:00"
         },
         {
             "name": "phpunit/php-text-template",
@@ -3657,7 +3923,7 @@
             "keywords": [
                 "template"
             ],
-            "time": "2015-06-21 13:50:34"
+            "time": "2015-06-21T13:50:34+00:00"
         },
         {
             "name": "phpunit/php-timer",
@@ -3701,7 +3967,7 @@
             "keywords": [
                 "timer"
             ],
-            "time": "2016-05-12 18:03:57"
+            "time": "2016-05-12T18:03:57+00:00"
         },
         {
             "name": "phpunit/php-token-stream",
@@ -3750,7 +4016,7 @@
             "keywords": [
                 "tokenizer"
             ],
-            "time": "2015-09-15 10:49:45"
+            "time": "2015-09-15T10:49:45+00:00"
         },
         {
             "name": "phpunit/phpunit",
@@ -3832,7 +4098,7 @@
                 "testing",
                 "xunit"
             ],
-            "time": "2016-10-25 07:40:25"
+            "time": "2016-10-25T07:40:25+00:00"
         },
         {
             "name": "phpunit/phpunit-mock-objects",
@@ -3891,7 +4157,7 @@
                 "mock",
                 "xunit"
             ],
-            "time": "2016-10-09 07:01:45"
+            "time": "2016-10-09T07:01:45+00:00"
         },
         {
             "name": "sebastian/code-unit-reverse-lookup",
@@ -3936,7 +4202,7 @@
             ],
             "description": "Looks up which function or method a line of code belongs to",
             "homepage": "https://github.com/sebastianbergmann/code-unit-reverse-lookup/",
-            "time": "2016-02-13 06:45:14"
+            "time": "2016-02-13T06:45:14+00:00"
         },
         {
             "name": "sebastian/comparator",
@@ -4000,7 +4266,7 @@
                 "compare",
                 "equality"
             ],
-            "time": "2015-07-26 15:48:44"
+            "time": "2015-07-26T15:48:44+00:00"
         },
         {
             "name": "sebastian/diff",
@@ -4052,7 +4318,7 @@
             "keywords": [
                 "diff"
             ],
-            "time": "2015-12-08 07:14:41"
+            "time": "2015-12-08T07:14:41+00:00"
         },
         {
             "name": "sebastian/environment",
@@ -4102,7 +4368,7 @@
                 "environment",
                 "hhvm"
             ],
-            "time": "2016-08-18 05:49:44"
+            "time": "2016-08-18T05:49:44+00:00"
         },
         {
             "name": "sebastian/exporter",
@@ -4169,7 +4435,7 @@
                 "export",
                 "exporter"
             ],
-            "time": "2016-06-17 09:04:28"
+            "time": "2016-06-17T09:04:28+00:00"
         },
         {
             "name": "sebastian/global-state",
@@ -4220,7 +4486,7 @@
             "keywords": [
                 "global state"
             ],
-            "time": "2015-10-12 03:26:01"
+            "time": "2015-10-12T03:26:01+00:00"
         },
         {
             "name": "sebastian/object-enumerator",
@@ -4266,7 +4532,7 @@
             ],
             "description": "Traverses array structures and object graphs to enumerate all referenced objects",
             "homepage": "https://github.com/sebastianbergmann/object-enumerator/",
-            "time": "2016-01-28 13:25:10"
+            "time": "2016-01-28T13:25:10+00:00"
         },
         {
             "name": "sebastian/recursion-context",
@@ -4319,7 +4585,7 @@
             ],
             "description": "Provides functionality to recursively process PHP variables",
             "homepage": "http://www.github.com/sebastianbergmann/recursion-context",
-            "time": "2015-11-11 19:50:13"
+            "time": "2015-11-11T19:50:13+00:00"
         },
         {
             "name": "sebastian/resource-operations",
@@ -4361,7 +4627,7 @@
             ],
             "description": "Provides a list of PHP built-in functions that operate on resources",
             "homepage": "https://www.github.com/sebastianbergmann/resource-operations",
-            "time": "2015-07-28 20:34:47"
+            "time": "2015-07-28T20:34:47+00:00"
         },
         {
             "name": "sebastian/version",
@@ -4404,116 +4670,7 @@
             ],
             "description": "Library that helps with managing the version number of Git-hosted PHP projects",
             "homepage": "https://github.com/sebastianbergmann/version",
-            "time": "2016-02-04 12:56:52"
-        },
-        {
-            "name": "symfony/class-loader",
-            "version": "v3.1.6",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/symfony/class-loader.git",
-                "reference": "bcb072aba46ddf3b1a496438c63be6be647739aa"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/symfony/class-loader/zipball/bcb072aba46ddf3b1a496438c63be6be647739aa",
-                "reference": "bcb072aba46ddf3b1a496438c63be6be647739aa",
-                "shasum": ""
-            },
-            "require": {
-                "php": ">=5.5.9"
-            },
-            "require-dev": {
-                "symfony/finder": "~2.8|~3.0",
-                "symfony/polyfill-apcu": "~1.1"
-            },
-            "suggest": {
-                "symfony/polyfill-apcu": "For using ApcClassLoader on HHVM"
-            },
-            "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "3.1-dev"
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "Symfony\\Component\\ClassLoader\\": ""
-                },
-                "exclude-from-classmap": [
-                    "/Tests/"
-                ]
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Fabien Potencier",
-                    "email": "fabien@symfony.com"
-                },
-                {
-                    "name": "Symfony Community",
-                    "homepage": "https://symfony.com/contributors"
-                }
-            ],
-            "description": "Symfony ClassLoader Component",
-            "homepage": "https://symfony.com",
-            "time": "2016-09-06 23:30:54"
-        },
-        {
-            "name": "symfony/config",
-            "version": "v3.1.6",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/symfony/config.git",
-                "reference": "949e7e846743a7f9e46dc50eb639d5fde1f53341"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/symfony/config/zipball/949e7e846743a7f9e46dc50eb639d5fde1f53341",
-                "reference": "949e7e846743a7f9e46dc50eb639d5fde1f53341",
-                "shasum": ""
-            },
-            "require": {
-                "php": ">=5.5.9",
-                "symfony/filesystem": "~2.8|~3.0"
-            },
-            "suggest": {
-                "symfony/yaml": "To use the yaml reference dumper"
-            },
-            "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "3.1-dev"
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "Symfony\\Component\\Config\\": ""
-                },
-                "exclude-from-classmap": [
-                    "/Tests/"
-                ]
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Fabien Potencier",
-                    "email": "fabien@symfony.com"
-                },
-                {
-                    "name": "Symfony Community",
-                    "homepage": "https://symfony.com/contributors"
-                }
-            ],
-            "description": "Symfony Config Component",
-            "homepage": "https://symfony.com",
-            "time": "2016-09-25 08:27:07"
+            "time": "2016-02-04T12:56:52+00:00"
         },
         {
             "name": "symfony/css-selector",
@@ -4566,67 +4723,7 @@
             ],
             "description": "Symfony CssSelector Component",
             "homepage": "https://symfony.com",
-            "time": "2016-09-06 11:02:40"
-        },
-        {
-            "name": "symfony/dependency-injection",
-            "version": "v3.1.6",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/symfony/dependency-injection.git",
-                "reference": "c578891216090069cd6d2e573402e13e39b3ad5c"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/symfony/dependency-injection/zipball/c578891216090069cd6d2e573402e13e39b3ad5c",
-                "reference": "c578891216090069cd6d2e573402e13e39b3ad5c",
-                "shasum": ""
-            },
-            "require": {
-                "php": ">=5.5.9"
-            },
-            "require-dev": {
-                "symfony/config": "~2.8|~3.0",
-                "symfony/expression-language": "~2.8|~3.0",
-                "symfony/yaml": "~2.8.7|~3.0.7|~3.1.1|~3.2"
-            },
-            "suggest": {
-                "symfony/config": "",
-                "symfony/expression-language": "For using expressions in service container configuration",
-                "symfony/proxy-manager-bridge": "Generate service proxies to lazy load them",
-                "symfony/yaml": ""
-            },
-            "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "3.1-dev"
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "Symfony\\Component\\DependencyInjection\\": ""
-                },
-                "exclude-from-classmap": [
-                    "/Tests/"
-                ]
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Fabien Potencier",
-                    "email": "fabien@symfony.com"
-                },
-                {
-                    "name": "Symfony Community",
-                    "homepage": "https://symfony.com/contributors"
-                }
-            ],
-            "description": "Symfony DependencyInjection Component",
-            "homepage": "https://symfony.com",
-            "time": "2016-10-24 15:52:44"
+            "time": "2016-09-06T11:02:40+00:00"
         },
         {
             "name": "symfony/dom-crawler",
@@ -4682,105 +4779,7 @@
             ],
             "description": "Symfony DomCrawler Component",
             "homepage": "https://symfony.com",
-            "time": "2016-10-18 15:46:07"
-        },
-        {
-            "name": "symfony/filesystem",
-            "version": "v3.1.6",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/symfony/filesystem.git",
-                "reference": "0565b61bf098cb4dc09f4f103f033138ae4f42c6"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/symfony/filesystem/zipball/0565b61bf098cb4dc09f4f103f033138ae4f42c6",
-                "reference": "0565b61bf098cb4dc09f4f103f033138ae4f42c6",
-                "shasum": ""
-            },
-            "require": {
-                "php": ">=5.5.9"
-            },
-            "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "3.1-dev"
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "Symfony\\Component\\Filesystem\\": ""
-                },
-                "exclude-from-classmap": [
-                    "/Tests/"
-                ]
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Fabien Potencier",
-                    "email": "fabien@symfony.com"
-                },
-                {
-                    "name": "Symfony Community",
-                    "homepage": "https://symfony.com/contributors"
-                }
-            ],
-            "description": "Symfony Filesystem Component",
-            "homepage": "https://symfony.com",
-            "time": "2016-10-18 04:30:12"
-        },
-        {
-            "name": "symfony/yaml",
-            "version": "v3.1.6",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/symfony/yaml.git",
-                "reference": "7ff51b06c6c3d5cc6686df69004a42c69df09e27"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/symfony/yaml/zipball/7ff51b06c6c3d5cc6686df69004a42c69df09e27",
-                "reference": "7ff51b06c6c3d5cc6686df69004a42c69df09e27",
-                "shasum": ""
-            },
-            "require": {
-                "php": ">=5.5.9"
-            },
-            "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "3.1-dev"
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "Symfony\\Component\\Yaml\\": ""
-                },
-                "exclude-from-classmap": [
-                    "/Tests/"
-                ]
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Fabien Potencier",
-                    "email": "fabien@symfony.com"
-                },
-                {
-                    "name": "Symfony Community",
-                    "homepage": "https://symfony.com/contributors"
-                }
-            ],
-            "description": "Symfony Yaml Component",
-            "homepage": "https://symfony.com",
-            "time": "2016-10-24 18:41:13"
+            "time": "2016-10-18T15:46:07+00:00"
         },
         {
             "name": "webmozart/assert",
@@ -4830,7 +4829,7 @@
                 "check",
                 "validate"
             ],
-            "time": "2016-08-09 15:02:57"
+            "time": "2016-08-09T15:02:57+00:00"
         }
     ],
     "aliases": [],
