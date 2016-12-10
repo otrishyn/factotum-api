@@ -13,7 +13,8 @@
     "spatie/laravel-fractal": "^2.0",
     "webpatser/laravel-uuid": "2.*",
     "laravel/passport": "^1.0",
-    "behat/behat": "^3.2"
+    "behat/behat": "^3.2",
+    "doctrine/dbal": "^2.5"
   },
   "require-dev": {
     "fzaninotto/faker": "~1.4",
