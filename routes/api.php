@@ -13,10 +13,11 @@ use Illuminate\Http\Request;
 |
 */
 
-Route::resource('categories', 'Category\CategoryController');
-Route::resource('categories/{id}/types', 'Category\TypeController');
+Route::group(['middleware' => ['auth:api', 'user.status']], function () {
+    Route::resource('categories', 'Category\CategoryController');
+    Route::resource('categories/{id}/types', 'Category\TypeController');
+});
 
-Route::get('/user', function (Request $request) {
-    dd(123);
+Route::get('user', function (Request $request) {
     return $request->user();
-})->middleware('auth:api');
+})->middleware('auth:api', 'user.status');
