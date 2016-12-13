@@ -2,7 +2,7 @@
 
 namespace App;
 
-use App\Traits\Uuids;
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Laravel\Passport\HasApiTokens;
@@ -28,6 +28,7 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
+        'active',
     ];
     
     /**
@@ -39,4 +40,32 @@ class User extends Authenticatable
         'password',
         'remember_token',
     ];
+    
+    public function findForPassport($identity)
+    {
+        /**
+         * var Builder $builder
+         */
+        $builder = (! ! filter_var($identity, FILTER_VALIDATE_EMAIL))
+            ? $this->where('email', $identity)
+            : $this->where('name', $identity);
+        
+        return $builder->active()->first();
+    }
+    
+    /**
+     * Scope: Active
+     *
+     * @param  $builder  Builder
+     * @return Builder
+     */
+    public function scopeActive(Builder $builder)
+    {
+        return $builder->where('active', 1);
+    }
+    
+    public function isActive()
+    {
+        return $this->active == 1;
+    }
 }
