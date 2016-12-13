@@ -87,4 +87,6 @@ return [
 
     'passwords' => [],
 
+    'password_grand_id' => env('AUTH_PASSWORD_GRAND_ID'),
+    'password_grand_secret' => env('AUTH_PASSWORD_GRAND_SECRET'),
 ];
