@@ -4,7 +4,7 @@ namespace Factotum\Category;
 
 
 use App\Models\Categories\Category;
-use App\User;
+use App\Models\User;
 
 class CategoryRepository
 {

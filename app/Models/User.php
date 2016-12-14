@@ -1,6 +1,6 @@
 <?php
 
-namespace App;
+namespace App\Models;
 
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Notifications\Notifiable;
@@ -13,7 +13,7 @@ use Laravel\Passport\HasApiTokens;
  * @property mixed id
  * @property mixed name
  * @property mixed email
- * @package App
+ * @package App\Models
  */
 class User extends Authenticatable
 {

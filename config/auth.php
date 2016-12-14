@@ -61,7 +61,7 @@ return [
     'providers' => [
         'users' => [
             'driver' => 'eloquent',
-            'model' => App\User::class,
+            'model' => App\Models\User::class,
         ],
 
         // 'users' => [
@@ -89,4 +89,10 @@ return [
 
     'password_grand_id' => env('AUTH_PASSWORD_GRAND_ID'),
     'password_grand_secret' => env('AUTH_PASSWORD_GRAND_SECRET'),
+    'passport'=>[
+        'expiration'=> [
+            'access_token' => env('PASSPORT_ACCESS_TOKEN_EXPIRE', 7),
+            'refresh_token' => env('PASSPORT_REFRESH_TOKEN_EXPIRE', 7),
+        ]
+    ]
 ];

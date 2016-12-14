@@ -2,7 +2,7 @@
 
 namespace Factotum\User;
 
-use App\User;
+use App\Models\User;
 
 /**
  * Class UserRepository
@@ -12,7 +12,7 @@ use App\User;
 class UserRepository
 {
     /**
-     * @param \App\User $user
+     * @param User $user
      */
     public function activate(User $user)
     {
@@ -21,7 +21,7 @@ class UserRepository
     }
     
     /**
-     * @param \App\User $user
+     * @param User $user
      */
     public function deactivate(User $user)
     {
@@ -30,7 +30,7 @@ class UserRepository
     }
     
     /**
-     * @param \App\User $user
+     * @param User $user
      */
     public function confirm(User $user)
     {
