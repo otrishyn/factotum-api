@@ -5,17 +5,21 @@ namespace App\Providers;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Foundation\Support\Providers\RouteServiceProvider as ServiceProvider;
 
+/**
+ * Class RouteServiceProvider
+ *
+ * @package App\Providers
+ */
 class RouteServiceProvider extends ServiceProvider
 {
     /**
      * This namespace is applied to your controller routes.
-     *
      * In addition, it is set as the URL generator's root namespace.
      *
      * @var string
      */
     protected $namespace = 'App\Http\Controllers';
-
+    
     /**
      * Define your route model bindings, pattern filters, etc.
      *
@@ -24,10 +28,10 @@ class RouteServiceProvider extends ServiceProvider
     public function boot()
     {
         //
-
+        
         parent::boot();
     }
-
+    
     /**
      * Define the routes for the application.
      *
@@ -35,44 +39,38 @@ class RouteServiceProvider extends ServiceProvider
      */
     public function map()
     {
-        $this->mapApiRoutes();
-    
-        $this->mapApiAuthRoutes();
-    }
-
-    /**
-     * Define the "api" routes for the application.
-     *
-     * These routes are typically stateless.
-     *
-     * @return void
-     */
-    protected function mapApiRoutes()
-    {
-        Route::group([
-            'middleware' => 'api',
-            'namespace' => $this->namespace,
-            'prefix' => 'api/v1',
-        ], function ($router) {
-            require base_path('routes/api.php');
-        });
+        $this->makeRoutes('api/v1', 'routes/api.php', $this->makeDefaultMiddlewares());
+        
+        $this->makeRoutes('api/v1/auth', 'routes/Routes/auth.php', ['api', 'guest']);
+        
+        $this->makeRoutes('api/v1/ategories', 'routes/Routes/category.php', $this->makeDefaultMiddlewares());
     }
     
     /**
-     * Define the "api" routes for the application.
-     *
-     * These routes are typically stateless.
-     *
-     * @return void
+     * @param string $prefix
+     * @param string $filename
+     * @param array $middlewares
      */
-    protected function mapApiAuthRoutes()
+    protected function makeRoutes($prefix, $filename, array $middlewares = [])
     {
-        Route::group([
-            'middleware' => 'api',
-            'namespace' => $this->namespace,
-            'prefix' => 'api/v1/auth',
-        ], function ($router) {
-            require base_path('routes/Routes/auth.php');
-        });
+        Route::group(
+            [
+                'middleware' => $middlewares,
+                'namespace' => $this->namespace,
+                'prefix' => $prefix,
+            ],
+            function ($router) use ($filename) {
+                require base_path($filename);
+            }
+        );
+    }
+    
+    /**
+     * @param array $middlewares
+     * @return array
+     */
+    protected function makeDefaultMiddlewares(array $middlewares = [])
+    {
+        return array_merge(['api', 'auth:api', 'user.state'], $middlewares);
     }
 }

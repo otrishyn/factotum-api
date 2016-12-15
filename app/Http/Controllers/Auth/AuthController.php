@@ -38,9 +38,6 @@ class AuthController extends ApiController
     {
         $this->clientId = config('auth.password_grand_id');
         $this->clientSecret = config('auth.password_grand_secret');
-    
-        $this->middleware('auth:api', ['except' => ['register', 'confirm', 'token']]);
-        $this->middleware('guest', ['only' => ['register', 'confirm', 'token']]);
         $this->userRepository = $userRepository;
     }
     
