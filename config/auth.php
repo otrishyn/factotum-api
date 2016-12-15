@@ -87,12 +87,12 @@ return [
 
     'passwords' => [],
 
-    'password_grand_id' => env('AUTH_PASSWORD_GRAND_ID'),
-    'password_grand_secret' => env('AUTH_PASSWORD_GRAND_SECRET'),
+    'password_grand_id' => env('AUTH_PASSPORT_PASSWORD_GRAND_ID'),
+    'password_grand_secret' => env('AUTH_PASSPORT_PASSWORD_GRAND_SECRET'),
     'passport'=>[
         'expiration'=> [
-            'access_token' => env('PASSPORT_ACCESS_TOKEN_EXPIRE', 7),
-            'refresh_token' => env('PASSPORT_REFRESH_TOKEN_EXPIRE', 7),
+            'access_token' => env('AUTH_PASSPORT_ACCESS_TOKEN_EXPIRE', 7),
+            'refresh_token' => env('AUTH_PASSPORT_REFRESH_TOKEN_EXPIRE', 14),
         ]
     ]
 ];
