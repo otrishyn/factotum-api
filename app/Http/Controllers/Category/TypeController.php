@@ -17,11 +17,12 @@ class TypeController extends ApiController
     /**
      * Display a listing of the resource.
      *
+     * @param mixed $categoryId
      * @param mixed $id
      * @param \Illuminate\Http\Request $request
      * @return array
      */
-    public function index($id, Request $request)
+    public function index($categoryId, $id, Request $request)
     {
         return $this->respondWithCollection(
             Type::where('category_id',$id)->paginate($request->input('limit', $this->defaultLimit)),
@@ -30,21 +31,21 @@ class TypeController extends ApiController
         );
     }
     
-   
+    
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request $request
-     * @param mixed $id
+     * @param \Illuminate\Http\Request $request
+     * @param mixed $categoryId
      * @return array
      */
-    public function store(Request $request, $id)
+    public function store(Request $request, $categoryId)
     {
         return $this->respondWithItem(
             Type::create(
                 [
                     'name' => $request->input('name'),
-                    'category_id' => (int) $id
+                    'category_id' => $categoryId
                 ]
             ),
             new TypeTransformer(),
@@ -56,10 +57,11 @@ class TypeController extends ApiController
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request $request
+     * @param mixed $categoryId
      * @param  mixed $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, $categoryId, $id)
     {
         $type = Type::findOrFail($id);
         $type->update($request->all());
@@ -74,10 +76,11 @@ class TypeController extends ApiController
     /**
      * Display the specified resource.
      *
+     * @param mixed $categoryId
      * @param  mixed $id
      * @return array
      */
-    public function show($id)
+    public function show($categoryId, $id)
     {
         return $this->respondWithItem(
             Type::findOrFail($id),
@@ -89,10 +92,11 @@ class TypeController extends ApiController
     /**
      * Remove the specified resource from storage.
      *
+     * @param mixed $categoryId
      * @param  mixed $id
      * @return \Illuminate\Http\JsonResponse
      */
-    public function destroy($id)
+    public function destroy($categoryId, $id)
     {
         Type::findOrFail($id)->delete();
     

@@ -43,7 +43,7 @@ class RouteServiceProvider extends ServiceProvider
         
         $this->makeRoutes('api/v1/auth', 'routes/Routes/auth.php', ['api', 'guest']);
         
-        $this->makeRoutes('api/v1/ategories', 'routes/Routes/category.php', $this->makeDefaultMiddlewares());
+        $this->makeRoutes('api/v1', 'routes/Routes/category.php', $this->makeDefaultMiddlewares());
     }
     
     /**
