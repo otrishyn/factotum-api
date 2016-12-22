@@ -23,12 +23,20 @@ class CreateCategoriesTable extends Migration
             $table->string('name');
             $table->integer('queue');
             $table->index(['name', 'queue']);
+            $table->unsignedInteger('user_id');
+            
+            $table->foreign('user_id')->references('id')->on('users');
         });
-
-        \App\Models\Categories\Category::create(['name'=>'Коммунальные', 'queue'=>1]);
-        \App\Models\Categories\Category::create(['name'=>'Покупки', 'queue'=>2]);
-        \App\Models\Categories\Category::create(['name'=>'Еда', 'queue'=>3]);
-        \App\Models\Categories\Category::create(['name'=>'Ремонт', 'queue'=>4]);
+    
+        $userRepository = app(Factotum\User\UserRepository::class);
+        $user = $userRepository->create('alexey', 'secret', 'demo@factotum.app');
+        $userRepository->activate($user);
+        
+        $categoryRepository = app(\Factotum\Category\CategoryRepository::class);
+        $categoryRepository->create(['name'=>'Коммунальные', 'queue'=>1], $user);
+        $categoryRepository->create(['name'=>'Покупки', 'queue'=>2], $user);
+        $categoryRepository->create(['name'=>'Еда', 'queue'=>3], $user);
+        $categoryRepository->create(['name'=>'Ремонт', 'queue'=>4], $user);
     }
 
     /**

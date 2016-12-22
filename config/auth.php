@@ -14,8 +14,7 @@ return [
     */
 
     'defaults' => [
-        'guard' => 'web',
-        'passwords' => 'users',
+        'guard' => 'api',
     ],
 
     /*
@@ -36,13 +35,8 @@ return [
     */
 
     'guards' => [
-        'web' => [
-            'driver' => 'session',
-            'provider' => 'users',
-        ],
-
         'api' => [
-            'driver' => 'token',
+            'driver' => 'passport',
             'provider' => 'users',
         ],
     ],
@@ -67,7 +61,7 @@ return [
     'providers' => [
         'users' => [
             'driver' => 'eloquent',
-            'model' => App\User::class,
+            'model' => App\Models\User::class,
         ],
 
         // 'users' => [
@@ -91,12 +85,14 @@ return [
     |
     */
 
-    'passwords' => [
-        'users' => [
-            'provider' => 'users',
-            'table' => 'password_resets',
-            'expire' => 60,
-        ],
-    ],
+    'passwords' => [],
 
+    'password_grand_id' => env('AUTH_PASSPORT_PASSWORD_GRAND_ID'),
+    'password_grand_secret' => env('AUTH_PASSPORT_PASSWORD_GRAND_SECRET'),
+    'passport'=>[
+        'expiration'=> [
+            'access_token' => env('AUTH_PASSPORT_ACCESS_TOKEN_EXPIRE', 7),
+            'refresh_token' => env('AUTH_PASSPORT_REFRESH_TOKEN_EXPIRE', 14),
+        ]
+    ]
 ];

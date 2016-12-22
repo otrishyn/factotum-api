@@ -13,9 +13,6 @@ use Illuminate\Http\Request;
 |
 */
 
-Route::resource('categories', 'Category\CategoryController');
-Route::resource('categories/{id}/types', 'Category\TypeController');
-
-/*Route::get('/user', function (Request $request) {
+Route::get('user', function (Request $request) {
     return $request->user();
-})->middleware('auth:api');*/
+});
