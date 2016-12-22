@@ -2,9 +2,9 @@
 
 namespace App\Listeners;
 
-use App\Events\Laravel\Passport\Events\AccessTokenCreated;
 use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Contracts\Queue\ShouldQueue;
+use Laravel\Passport\Events\AccessTokenCreated;
 
 class RevokeOldTokens
 {
