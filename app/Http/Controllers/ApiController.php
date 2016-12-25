@@ -143,12 +143,13 @@ class ApiController extends Controller
     }
     
     /**
-     * @param string|null $message
+     * @param array $body
+     * @param array $headers
      * @return \Illuminate\Http\JsonResponse
      */
-    protected function respondWithOk($message = null)
+    protected function respondWithOk(array $body = [], array $headers = [])
     {
-        return $this->respondWithBody(200, $message);
+        return $this->respondWithBody(200, $body, $headers);
     }
     
     /**

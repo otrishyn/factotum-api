@@ -5,10 +5,31 @@ namespace App\Http\Controllers\Category;
 use App\Http\Controllers\ApiController;
 use App\Models\Categories\Category;
 use Factotum\Transformers\Category\CategoryTransformer;
+use Illuminate\Contracts\Auth\Guard;
 use Illuminate\Http\Request;
 
+/**
+ * Class CategoryController
+ *
+ * @package App\Http\Controllers\Category
+ */
 class CategoryController extends ApiController
 {
+    /**
+     * @var \Illuminate\Contracts\Auth\Guard
+     */
+    private $auth;
+    
+    /**
+     * CategoryController constructor.
+     *
+     * @param \Illuminate\Contracts\Auth\Guard $auth
+     */
+    public function __construct(Guard $auth)
+    {
+        $this->auth = $auth;
+    }
+    
     /**
      * Display a listing of the resource.
      *
@@ -17,8 +38,11 @@ class CategoryController extends ApiController
      */
     public function index(Request $request)
     {
+        $paginate = Category::where('user_id', $this->auth->id())
+            ->paginate($request->input('limit', $this->defaultLimit));
+        
         return $this->respondWithCollection(
-            Category::paginate($request->input('limit', $this->defaultLimit)),
+            $paginate,
             new CategoryTransformer(),
             'category',
             explode(',', $request->input('include', ''))
@@ -38,6 +62,7 @@ class CategoryController extends ApiController
                 [
                     'name' => $request->input('name'),
                     'queue' => Category::max('queue') + 1,
+                    'user_id' => $this->auth->id(),
                 ]
             ),
             new CategoryTransformer(),
@@ -54,7 +79,7 @@ class CategoryController extends ApiController
     public function show($id)
     {
         return $this->respondWithItem(
-            Category::findOrFail($id),
+            Category::where('user_id', $this->auth->id())->findOrFail($id),
             new CategoryTransformer(),
             'category'
         );
@@ -69,8 +94,8 @@ class CategoryController extends ApiController
      */
     public function update(Request $request, $id)
     {
-        $category = Category::findOrFail($id);
-        $category->update($request->all());
+        $category = Category::where('user_id', $this->auth->id())->findOrFail($id);
+        $category->update(array_merge($request->except('user_id'), ['user_id' => $this->auth->id()]));
         
         return $this->respondWithItem(
             $category,
@@ -87,7 +112,7 @@ class CategoryController extends ApiController
      */
     public function destroy($id)
     {
-        Category::findOrFail($id)->delete();
+        Category::where('user_id', $this->auth->id())->findOrFail($id)->delete();
         
         return $this->respondWithOk();
     }
