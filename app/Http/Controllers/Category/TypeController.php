@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Category;
 use App\Http\Controllers\ApiController;
 use App\Models\Categories\Type;
 use Factotum\Transformers\Category\TypeTransformer;
+use Illuminate\Database\Eloquent\ModelNotFoundException;
 use Illuminate\Http\Request;
 
 /**
@@ -18,14 +19,13 @@ class TypeController extends ApiController
      * Display a listing of the resource.
      *
      * @param mixed $categoryId
-     * @param mixed $id
      * @param \Illuminate\Http\Request $request
      * @return array
      */
-    public function index($categoryId, $id, Request $request)
+    public function index($categoryId, Request $request)
     {
         return $this->respondWithCollection(
-            Type::where('category_id',$id)->paginate($request->input('limit', $this->defaultLimit)),
+            Type::where('category_id', $categoryId)->paginate($request->input('limit', $this->defaultLimit)),
             new TypeTransformer(),
             'type'
         );
@@ -63,7 +63,7 @@ class TypeController extends ApiController
      */
     public function update(Request $request, $categoryId, $id)
     {
-        $type = Type::findOrFail($id);
+        $type = $this->findOrFailType($categoryId, $id);
         $type->update($request->all());
         
         return $this->respondWithItem(
@@ -83,7 +83,7 @@ class TypeController extends ApiController
     public function show($categoryId, $id)
     {
         return $this->respondWithItem(
-            Type::findOrFail($id),
+            $this->findOrFailType($categoryId, $id),
             new TypeTransformer(),
             'type'
         );
@@ -98,8 +98,34 @@ class TypeController extends ApiController
      */
     public function destroy($categoryId, $id)
     {
-        Type::findOrFail($id)->delete();
+        $this->findOrFailType($categoryId, $id)->delete();
     
         return $this->respondWithOk();
+    }
+    
+    /**
+     * @param mixed $categoryId
+     * @param mixed $id
+     * @return Type|null
+     */
+    protected function findType($categoryId, $id)
+    {
+        return Type::where('category_id', $categoryId)
+            ->where('id', $id)
+            ->get();
+    }
+    
+    /**
+     * @param mixed $categoryId
+     * @param mixed $id
+     * @return mixed
+     */
+    protected function findOrFailType($categoryId, $id)
+    {
+        $type = $this->findType($categoryId, $id);
+        if (! $type) {
+            throw (new ModelNotFoundException)->setModel(Type::class);
+        }
+        return $type;
     }
 }
